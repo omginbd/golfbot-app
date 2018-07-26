@@ -7,7 +7,7 @@ class HttpError extends Error {
 
 class BadRequestError extends HttpError {
   constructor (message) {
-    super(400, message || 'Bad Request')
+    super(400, message)
   }
 }
 
