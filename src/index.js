@@ -1,5 +1,6 @@
 const bodyParser = require('body-parser')
 const config = require('config')
+const cors = require('cors')
 const express = require('express')
 const mongoose = require('mongoose')
 const morgan = require('morgan')
@@ -18,6 +19,7 @@ mongoose.connect(
 const app = express()
 app.use(morgan(config.log.format))
 app.use(bodyParser.json())
+app.use(cors())
 
 app.post(
   '/api/participants',
